@@ -1,35 +1,27 @@
-"""Chess game, for learning to grab images from a sprite sheet."""
-
 import sys
-
 import pygame
 
 
-class ChessGame:
-    """Overall class to manage game assets and behavior."""
+if __name__ == '__main__':
+    pygame.init()
+    clock = pygame.time.Clock()
+    screen = pygame.display.set_mode((1200, 800))
+    pygame.display.set_caption("Chess")
 
-    def __init__(self):
-        """Initialize the game, and create resources."""
-        pygame.init()
-        self.screen = pygame.display.set_mode((1200, 800))
-        pygame.display.set_caption("Chess")
+    try:
+        image = pygame.image.load("chess_pieces.bmp").convert()
+    except pygame.error as e:
+        print("Unable to load image.")
+        raise SystemExit(e)
 
-    def run_game(self):
-        """Start the main loop for the game."""
-        while True:
-            self._check_events()
-            self._update_screen()
-
-    def _check_events(self):
+    while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
 
-    def _update_screen(self):
-        self.screen.fill((225, 225, 225))
+        rect = pygame.Rect((68, 70, 85, 85))
+
+        screen.fill((225, 225, 225))
+        screen.blit(image, (0, 0), rect)
         pygame.display.flip()
-
-
-if __name__ == '__main__':
-    chess_game = ChessGame()
-    chess_game.run_game()
+        clock.tick(60)
