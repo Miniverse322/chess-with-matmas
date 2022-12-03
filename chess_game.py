@@ -30,10 +30,17 @@ if __name__ == '__main__':
 
         screen.blit(image, (PIECE_SIZE*0, 0), rect_rook)
         screen.blit(image, (PIECE_SIZE*1, 0), rect_knight)
-        screen.blit(image, (PIECE_SIZE*2, 0), rect_king)
+        screen.blit(image, (PIECE_SIZE*2, 0), rect_bishop)
         screen.blit(image, (PIECE_SIZE*3, 0), rect_queen)
-        screen.blit(image, (PIECE_SIZE*4, 0), rect_bishop)
-        screen.blit(image, (PIECE_SIZE*5, 0), rect_pawn)
+        screen.blit(image, (PIECE_SIZE*4, 0), rect_king)
+        screen.blit(image, (PIECE_SIZE*5, 0), rect_bishop)
+        screen.blit(image, (PIECE_SIZE*6, 0), rect_knight)
+        screen.blit(image, (PIECE_SIZE*7, 0), rect_rook)
+        
+        screen.blit(image, (PIECE_SIZE*0, PIECE_SIZE), rect_pawn)
+        screen.blit(image, (PIECE_SIZE*1, PIECE_SIZE), rect_pawn)
+        screen.blit(image, (PIECE_SIZE*2, PIECE_SIZE), rect_pawn)
+        screen.blit(image, (PIECE_SIZE*3, PIECE_SIZE), rect_pawn)
 
         pygame.display.flip()
         clock.tick(60)
