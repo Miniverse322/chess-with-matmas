@@ -21,11 +21,6 @@ if __name__ == '__main__':
                 sys.exit()
         screen.fill((225, 225, 225))
 
-        def some_function():
-            print("something")
-
-        some_function()
-
         rect_rook = pygame.Rect((PIECE_SIZE*2, 0, PIECE_SIZE, PIECE_SIZE))
         rect_knight = pygame.Rect((PIECE_SIZE*4, 0, PIECE_SIZE, PIECE_SIZE))
         rect_king = pygame.Rect((0, 0, PIECE_SIZE, PIECE_SIZE))
