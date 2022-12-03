@@ -1,7 +1,7 @@
 import sys
 import pygame
 
-PIECE_SIZE = 170
+PIECE_SIZE = 100
 
 if __name__ == '__main__':
     pygame.init()
