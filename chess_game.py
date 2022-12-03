@@ -14,7 +14,7 @@ if __name__ == '__main__':
     pygame.display.set_caption("Chess")
 
     try:
-        image = pygame.image.load("chess_pieces.png").convert()
+        image = pygame.image.load("chess_pieces.png").convert_alpha()
     except pygame.error as e:
         print("Unable to load image.")
         raise SystemExit(e)
