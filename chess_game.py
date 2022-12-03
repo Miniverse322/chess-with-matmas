@@ -83,6 +83,9 @@ if __name__ == '__main__':
             rect_knight_white,
             rect_rook_white,
         ]
+        print(pygame.mouse.get_pressed())
+        print(pygame.mouse.get_pos())
+        pygame.draw.rect(screen, (60, 35, 38), pygame.Rect(100, 100, 100, 100))
 
         # for x in range(8):
         #     for y in range(8):
