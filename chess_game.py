@@ -87,14 +87,9 @@ if __name__ == '__main__':
         print(pygame.mouse.get_pos())
         for i in range (8):
             for j in range(8):
-                pygame.draw.rect(screen, (60, 35, 38), pygame.Rect(i*100*2, 00, 100, 100))
-                pygame.draw.rect(screen, (60, 35, 38), pygame.Rect(i*100*2+100, 100, 100, 100))
-                pygame.draw.rect(screen, (60, 35, 38), pygame.Rect(i*100*2, 200, 100, 100))
-                pygame.draw.rect(screen, (60, 35, 38), pygame.Rect(i*100*2+100, 300, 100, 100))
-                pygame.draw.rect(screen, (60, 35, 38), pygame.Rect(i*100*2, 400, 100, 100))
-                pygame.draw.rect(screen, (60, 35, 38), pygame.Rect(i*100*2+100, 500, 100, 100))
-                pygame.draw.rect(screen, (60, 35, 38), pygame.Rect(i*100*2, 600, 100, 100))
-                pygame.draw.rect(screen, (60, 35, 38), pygame.Rect(i*100*2+100, 700, 100, 100))
+                if (i + j) % 2 == 1:
+                    pygame.draw.rect(screen, (60, 35, 38), pygame.Rect(i*100, j*100, 100, 100))
+
         # for x in range(8):
         #     for y in range(8):
         #         draw_piece(x, y, pieces[y * 8 + x])
