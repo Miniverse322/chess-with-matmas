@@ -41,47 +41,47 @@ if __name__ == '__main__':
         rect_pawn_white = pygame.Rect((PIECE_SIZE * 5, PIECE_SIZE, PIECE_SIZE, PIECE_SIZE))
 
         pieces = [
-            rect_rook_black,
+            [rect_rook_black,
             rect_knight_black,
             rect_bishop_black,
             rect_queen_black,
             rect_king_black,
             rect_bishop_black,
             rect_knight_black,
-            rect_rook_black,
+            rect_rook_black],
 
+            [rect_pawn_black,
             rect_pawn_black,
             rect_pawn_black,
             rect_pawn_black,
             rect_pawn_black,
             rect_pawn_black,
             rect_pawn_black,
-            rect_pawn_black,
-            rect_pawn_black,
+            rect_pawn_black],
 
-            empty, empty, empty, empty, empty, empty, empty, empty,
-            empty, empty, empty, empty, empty, empty, empty, empty,
-            empty, empty, empty, empty, empty, empty, empty, empty,
-            empty, empty, empty, empty, empty, empty, empty, empty,
+            [empty, empty, empty, empty, empty, empty, empty, empty],
+            [empty, empty, empty, empty, empty, empty, empty, empty],
+            [empty, empty, empty, empty, empty, empty, empty, empty],
+            [empty, empty, empty, empty, empty, empty, empty, empty],
 
 
+            [rect_pawn_white,
             rect_pawn_white,
             rect_pawn_white,
             rect_pawn_white,
             rect_pawn_white,
             rect_pawn_white,
             rect_pawn_white,
-            rect_pawn_white,
-            rect_pawn_white,
+            rect_pawn_white],
 
-            rect_rook_white,
+            [rect_rook_white,
             rect_knight_white,
             rect_bishop_white,
             rect_queen_white,
             rect_king_white,
             rect_bishop_white,
             rect_knight_white,
-            rect_rook_white,
+            rect_rook_white],
         ]
         print(pygame.mouse.get_pressed())
         print(pygame.mouse.get_pos())
@@ -90,12 +90,9 @@ if __name__ == '__main__':
                 if (i + j) % 2 == 1:
                     pygame.draw.rect(screen, (60, 35, 38), pygame.Rect(i*100, j*100, 100, 100))
 
-        # for x in range(8):
-        #     for y in range(8):
-        #         draw_piece(x, y, pieces[y * 8 + x])
-
-        for i in range(64):
-            draw_piece(i % 8, i // 8, pieces[i])
+        for x in range(8):
+            for y in range(8):
+                draw_piece(x, y, pieces[y][x])
 
         pygame.display.flip()
         clock.tick(60)
