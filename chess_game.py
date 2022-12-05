@@ -3,14 +3,15 @@ import pygame
 
 PIECE_SIZE = 100
 
+
 def draw_piece(x, y, rect):
     screen.blit(image, (PIECE_SIZE * x, PIECE_SIZE * y), rect)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     pygame.init()
     clock = pygame.time.Clock()
-    screen = pygame.display.set_mode((PIECE_SIZE*8, PIECE_SIZE*8))
+    screen = pygame.display.set_mode((PIECE_SIZE * 8, PIECE_SIZE * 8))
     pygame.display.set_caption("Chess")
 
     try:
@@ -33,62 +34,75 @@ if __name__ == '__main__':
         rect_bishop_black = pygame.Rect((PIECE_SIZE * 3, 0, PIECE_SIZE, PIECE_SIZE))
         rect_pawn_black = pygame.Rect((PIECE_SIZE * 5, 0, PIECE_SIZE, PIECE_SIZE))
 
-        rect_rook_white = pygame.Rect((PIECE_SIZE * 2, PIECE_SIZE, PIECE_SIZE, PIECE_SIZE))
-        rect_knight_white = pygame.Rect((PIECE_SIZE * 4, PIECE_SIZE, PIECE_SIZE, PIECE_SIZE))
+        rect_rook_white = pygame.Rect(
+            (PIECE_SIZE * 2, PIECE_SIZE, PIECE_SIZE, PIECE_SIZE)
+        )
+        rect_knight_white = pygame.Rect(
+            (PIECE_SIZE * 4, PIECE_SIZE, PIECE_SIZE, PIECE_SIZE)
+        )
         rect_king_white = pygame.Rect((0, PIECE_SIZE, PIECE_SIZE, PIECE_SIZE))
         rect_queen_white = pygame.Rect((PIECE_SIZE, PIECE_SIZE, PIECE_SIZE, PIECE_SIZE))
-        rect_bishop_white = pygame.Rect((PIECE_SIZE * 3, PIECE_SIZE, PIECE_SIZE, PIECE_SIZE))
-        rect_pawn_white = pygame.Rect((PIECE_SIZE * 5, PIECE_SIZE, PIECE_SIZE, PIECE_SIZE))
+        rect_bishop_white = pygame.Rect(
+            (PIECE_SIZE * 3, PIECE_SIZE, PIECE_SIZE, PIECE_SIZE)
+        )
+        rect_pawn_white = pygame.Rect(
+            (PIECE_SIZE * 5, PIECE_SIZE, PIECE_SIZE, PIECE_SIZE)
+        )
 
         pieces = [
-            [rect_rook_black,
-            rect_knight_black,
-            rect_bishop_black,
-            rect_queen_black,
-            rect_king_black,
-            rect_bishop_black,
-            rect_knight_black,
-            rect_rook_black],
-
-            [rect_pawn_black,
-            rect_pawn_black,
-            rect_pawn_black,
-            rect_pawn_black,
-            rect_pawn_black,
-            rect_pawn_black,
-            rect_pawn_black,
-            rect_pawn_black],
-
+            [
+                rect_rook_black,
+                rect_knight_black,
+                rect_bishop_black,
+                rect_queen_black,
+                rect_king_black,
+                rect_bishop_black,
+                rect_knight_black,
+                rect_rook_black,
+            ],
+            [
+                rect_pawn_black,
+                rect_pawn_black,
+                rect_pawn_black,
+                rect_pawn_black,
+                rect_pawn_black,
+                rect_pawn_black,
+                rect_pawn_black,
+                rect_pawn_black,
+            ],
             [empty, empty, empty, empty, empty, empty, empty, empty],
             [empty, empty, empty, empty, empty, empty, empty, empty],
             [empty, empty, empty, empty, empty, empty, empty, empty],
             [empty, empty, empty, empty, empty, empty, empty, empty],
-
-
-            [rect_pawn_white,
-            rect_pawn_white,
-            rect_pawn_white,
-            rect_pawn_white,
-            rect_pawn_white,
-            rect_pawn_white,
-            rect_pawn_white,
-            rect_pawn_white],
-
-            [rect_rook_white,
-            rect_knight_white,
-            rect_bishop_white,
-            rect_queen_white,
-            rect_king_white,
-            rect_bishop_white,
-            rect_knight_white,
-            rect_rook_white],
+            [
+                rect_pawn_white,
+                rect_pawn_white,
+                rect_pawn_white,
+                rect_pawn_white,
+                rect_pawn_white,
+                rect_pawn_white,
+                rect_pawn_white,
+                rect_pawn_white,
+            ],
+            [
+                rect_rook_white,
+                rect_knight_white,
+                rect_bishop_white,
+                rect_queen_white,
+                rect_king_white,
+                rect_bishop_white,
+                rect_knight_white,
+                rect_rook_white,
+            ],
         ]
         print(pygame.mouse.get_pressed())
         print(pygame.mouse.get_pos())
-        for i in range (8):
+        for i in range(8):
             for j in range(8):
                 if (i + j) % 2 == 1:
-                    pygame.draw.rect(screen, (60, 35, 38), pygame.Rect(i*100, j*100, 100, 100))
+                    pygame.draw.rect(
+                        screen, (60, 35, 38), pygame.Rect(i * 100, j * 100, 100, 100)
+                    )
 
         for x in range(8):
             for y in range(8):
