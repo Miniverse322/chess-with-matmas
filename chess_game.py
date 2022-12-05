@@ -96,12 +96,18 @@ if __name__ == "__main__":
             ],
         ]
         print(pygame.mouse.get_pressed())
-        print(pygame.mouse.get_pos())
+        mouse_x, mouse_y = pygame.mouse.get_pos()
+        print(mouse_x // PIECE_SIZE, mouse_y // PIECE_SIZE)
+
         for i in range(8):
             for j in range(8):
                 if (i + j) % 2 == 1:
                     pygame.draw.rect(
-                        screen, (60, 35, 38), pygame.Rect(i * 100, j * 100, 100, 100)
+                        screen,
+                        (60, 35, 38),
+                        pygame.Rect(
+                            i * PIECE_SIZE, j * PIECE_SIZE, PIECE_SIZE, PIECE_SIZE
+                        ),
                     )
 
         for x in range(8):
